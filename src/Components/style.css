@@ -1,0 +1,104 @@
+.navbar {
+    background-color: #232A35;
+    color: #fff;
+    padding: 20px 50px;
+}
+
+.app-name {
+    padding-bottom: 5px;
+    letter-spacing: 3px;
+}
+
+.app-sub-name {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.search {
+    display: block;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+    border: unset;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.search::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.all-note-container{
+    margin: 50px auto;
+    width: 80%;
+}
+
+.note-container {
+    margin: 10px;
+    display: inline-block;
+    width: 350px;
+    background-color: #232A35;
+    color: #fff;
+    padding: 25px 20px;
+    border-radius: 7px;
+}
+
+.note-wrapper {
+    margin: auto;
+}
+
+.note-category {
+    color: yellow;
+}
+
+.note-highlight {
+    padding: 6px 2.5px;
+    background-color: yellow;
+    margin-right: 10px;
+}
+
+.note-header {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.note-sub-header {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.note-body {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.btn-container{
+    margin: 30px 0;
+}
+
+.btn-primary{
+    color: #232A35;
+    background-color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.note-timestamp{
+    font-size: 14px;
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
