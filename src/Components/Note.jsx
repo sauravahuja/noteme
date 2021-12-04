@@ -1,34 +1,44 @@
+import { NavLink } from 'react-router-dom';
+import EditNote from './EditNote';
 import './style.css';
 
-const Note = () => {
-    let month = {
-        0: "Jan", 1: "Feb", 2: "Mar", 3: "Apr", 4: "May", 5: "Jun", 6: "Jul", 7: "Aug", 8: "Sept", 9: "Oct", 10: "Nov", 11: "Dec"
-    }
-    let date = new Date();
-    let todayDate = date.getDate();
-    let todayMonth = month[date.getUTCMonth()];
-    let todayYear = date.getFullYear();
+const Note = (props) => {
+    let categoryColor = props.categoryColor;
+    let title;
+    let noteDeleteName = props.title;
+    title = noteDeleteName;
+    noteDeleteName = noteDeleteName.replace(/ +/g, "").toLowerCase();
 
-    let fullDate = todayDate + " " + todayMonth + " " + todayYear;
+    const noteDelete = (e) => {
+        console.log(e.target.id);
+        let ansConfirm = window.confirm("Are you sure want to delete the note - '" + title + "'")
+        if (ansConfirm) {
+            localStorage.removeItem(noteDeleteName);
+            alert("Note Deleted Successfully!")
+            window.location.reload();
+        }
+    }
 
     return (
         <>
             <div className="note-container">
                 <div className="note-wrapper">
-                    <p className="note-category"> <span className="note-highlight"></span> Todo</p>
-                    <p className="note-header">Walmart List</p>
-                    <p className="note-sub-header">Get things having fresh dates</p>
+                    <div className="d-flex note-control">
+                        <p className="note-category" style={{ color: categoryColor }}> <span className="note-highlight" style={{ background: categoryColor }}></span>{props.category}</p>
+                        <div className="d-flex">
+                            <NavLink to={`/edit/${noteDeleteName}`} id={`${noteDeleteName}`} className="px-5 link-edit" onClick={EditNote}>🖊️</NavLink>
+                            <p id={`${noteDeleteName}`} className="px-5" onClick={noteDelete}>❌</p>
+                        </div>
+                    </div>
+                    <p className="note-header">{props.title}</p>
+                    <p className="note-sub-header">{props.subTitle}</p>
                     <pre className="note-body">
-                        {`Things to Buy 
-1) Buy Grocery
-2) Buy Laptop Stand
-3) Buy Carpet
-                        `}
+                        {props.body}
                     </pre>
                     <div className="btn-container">
-                        <a href="./" className="btn btn-primary">See More</a>
+                        <NavLink to={"./" + props.linkToMore} className="btn btn-primary">See More</NavLink>
                     </div>
-                    <p className="note-timestamp">{fullDate}</p>
+                    <p className="note-timestamp">{props.timestamp}</p>
                 </div>
             </div>
         </>
