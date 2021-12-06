@@ -7,6 +7,7 @@
 .app-name {
     padding-bottom: 5px;
     letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .app-sub-name {

@@ -21,7 +21,7 @@ const Note = (props) => {
 
     return (
         <>
-            <div className="note-container">
+            <div className="note-container" id={props.linkToMore}>
                 <div className="note-wrapper">
                     <div className="d-flex note-control">
                         <p className="note-category" style={{ color: categoryColor }}> <span className="note-highlight" style={{ background: categoryColor }}></span>{props.category}</p>

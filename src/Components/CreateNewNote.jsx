@@ -56,7 +56,7 @@ const CreateNewNote = () => {
                     </div>
                     <label className="note-label" htmlFor="noteBody">Note Body </label><br />
                     <textarea className="note-input" id="noteBody" name="noteBody" rows="10" placeholder="Enter note here..."></textarea>
-                    <input type="submit" value="Submit" className="btn btn-primary submit-btn" />
+                    <input type="submit" value="Add New Note" className="btn btn-primary submit-btn" />
                 </form>
             </div>
         </>
