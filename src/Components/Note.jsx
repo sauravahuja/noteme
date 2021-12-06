@@ -36,7 +36,7 @@ const Note = (props) => {
                         {props.body}
                     </pre>
                     <div className="btn-container">
-                        <NavLink to={"./" + props.linkToMore} className="btn btn-primary">See More</NavLink>
+                        <NavLink to={"./view/" + props.linkToMore} className="btn btn-primary">See More</NavLink>
                     </div>
                     <p className="note-timestamp">{props.timestamp}</p>
                 </div>
